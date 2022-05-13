@@ -1,0 +1,8 @@
+#!/bin/bash
+cd /d/homework/dir1/
+mkdir dir{2,3,4}
+cd dir2/
+touch hw_{1,2,3}.txt hw_{4,5}.json
+mkdir dir{5,6,7}
+ls -la
+mv {hw_1.txt,hw_2.txt} /d/homework/dir1/dir3/
