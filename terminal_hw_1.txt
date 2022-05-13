@@ -1,0 +1,42 @@
+1) Посмотреть где я:				pwd	#я здесь -> /d/homework
+2) Создать папку:				mkdir dir1
+3) Зайти в папку:				cd dir1/
+4) Создать 3 папки:				mkdir dir2 dir3 dir4	#можно через mkdir dir{2,3,4} если часть названия папок будет одинаковой
+5) Зайти в любоую папку:			cd dir2/
+6) Создать 5 файлов (3 txt, 2 json):		touch hw_{1,2,3}.txt hw_{4,5}.json
+7) Создать 3 папки:				mkdir dir{5,6,7}
+8. Вывести список содержимого папки:		ls -la
+9) + Открыть любой txt файл:			vim hw_1.txt
+10) + написать туда что-нибудь, любой текст.:	сперва нужно нажать 'i', после чего можно вводить текст
+11) + сохранить и выйти.:			нажать 'Escape', затем ввести :wq и нажать 'Enter'
+12) Выйти из папки на уровень выше:		cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.:		mv hw_{1,2}.txt /d/homework/dir1/dir3
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.:		cp hw_3.txt hw_4.json /d/homework/dir1/dir2/dir5
+15) Найти файл по имени:								find /d/homework -name hw_1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.:	tail -f /d/homework/dir1/dir3/hw_1.txt
+17) вывести несколько первых строк из текстового файла:					head -n3 /d/homework/dir1/dir3/hw_1.txt
+18) вывести несколько последних строк из текстового файла:				tail -n4 /d/homework/dir1/dir3/hw_1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.:	less /d/homework/dir1/di3/hw_1.txt
+20) вывести дату и время:								date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+	curl http://162.55.220.72:5005/terminal-hw-request
+	curl 'http://162.55.220.72:5005/get_method?name=Sergey&age=34'
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+	touch /d/homework/script
+	vim /d/homework/script
+		#!/bin/bash
+		cd /d/homework/dir1/
+		mkdir dir{2,3,4}
+		cd dir2/
+		touch hw_{1,2,3}.txt hw_{4,5}.json
+		mkdir dir{5,6,7}
+		ls -la
+		mv {hw_1.txt,hw_2.txt} /d/homework/dir1/dir3/
+	chmod +x /d/homework/script
+	/d/homework/script
